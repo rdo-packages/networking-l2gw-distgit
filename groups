@@ -1,3 +1,5 @@
-# UUID                                  	Group Name
-#
-0b29bb967cb2126ac18416a4e7502ac729374a52	openstack/networking-l2gw-distgit-ptl
+# UUID          Group Name
+False 	Non-Interactive Users
+4dfba297b2807a4a837fca499f3d7657a1fed048       	openstack/networking-l2gw-distgit-core
+0b29bb967cb2126ac18416a4e7502ac729374a52        	openstack/networking-l2gw-distgit-ptl
+global:Registered-Users		Registered Users

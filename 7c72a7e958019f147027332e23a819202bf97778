@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_402b4282",
+        "filename": "neutron-l2gw-agent.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "We are using the neutron.conf file, and logging to /var/log/neutron. This implies a dependency on Neutron that is not expressed anywhere in the spec. I guess we should make the package require openstack-neutron-common.",
+      "range": {
+        "startLine": 8,
+        "startChar": 52,
+        "endLine": 8,
+        "endChar": 78
+      },
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_20264ebb",
+        "filename": "neutron-l2gw-agent.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "Could we add Restart\u003don-failure, so systemd restarts the agent in case of an issue? See https://github.com/rdo-packages/neutron-distgit/blob/rpm-master/neutron-l3-agent.service#L11 for a sample usage.",
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_800e3a33",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "nit: extra blank (there are a few more in the spec)",
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_6009262c",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "Besides the main package, the tests package need to require all test-requirements.",
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_a0125e56",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "This can be removed, doc generation is working fine.",
+      "range": {
+        "startLine": 75,
+        "startChar": 0,
+        "endLine": 76,
+        "endChar": 46
+      },
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_001a2a6e",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-19T16:31:26Z",
+      "side": 1,
+      "message": "That\u0027s a lot of extra blanks :)",
+      "revId": "7c72a7e958019f147027332e23a819202bf97778",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

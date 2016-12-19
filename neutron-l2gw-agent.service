@@ -1,0 +1,13 @@
+[Unit]
+Description=OpenStack Neutron L2 Gateway Agent
+After=syslog.target network.target
+
+[Service]
+Type=simple
+User=neutron
+ExecStart=/usr/bin/neutron-l2gw-agent --config-file /etc/neutron/neutron.conf --config-file /etc/neutron/l2gateway_agent.ini  --log-file /var/log/neutron/l2gw-agent.log
+PrivateTmp=false
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target

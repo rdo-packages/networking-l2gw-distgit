@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_c392fc9e",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-21T17:46:28Z",
+      "side": 1,
+      "message": "We can probably remove these files. Having multiple README.rst files means only one of them gets packaged.",
+      "range": {
+        "startLine": 124,
+        "startChar": 5,
+        "endLine": 124,
+        "endChar": 84
+      },
+      "revId": "87e1e7ce8046343cf985c5f936ce1ed5ccccb890",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_e38f0074",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-21T17:46:28Z",
+      "side": 1,
+      "message": "same here",
+      "range": {
+        "startLine": 124,
+        "startChar": 96,
+        "endLine": 124,
+        "endChar": 115
+      },
+      "revId": "87e1e7ce8046343cf985c5f936ce1ed5ccccb890",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

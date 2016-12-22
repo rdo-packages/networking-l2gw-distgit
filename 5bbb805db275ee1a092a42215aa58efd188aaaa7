@@ -1,0 +1,250 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fab399f4_ce3dc3bd",
+        "filename": "neutron-l2gw-agent.service",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "since it\u0027s part of neutron, we should integrate the service with conf.d directory.",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_ee4a8754",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "as?",
+      "range": {
+        "startLine": 36,
+        "startChar": 55,
+        "endLine": 36,
+        "endChar": 57
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_ae67afe9",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "how about python-neutron?",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_0e489b5a",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "-\u003e doc",
+      "range": {
+        "startLine": 56,
+        "startChar": 9,
+        "endLine": 56,
+        "endChar": 35
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_2e747f9b",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "-\u003e tests",
+      "range": {
+        "startLine": 61,
+        "startChar": 9,
+        "endLine": 61,
+        "endChar": 37
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_4e79b392",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "why? I don\u0027t think we use it directly, but thru oslo.db",
+      "range": {
+        "startLine": 70,
+        "startChar": 12,
+        "endLine": 70,
+        "endChar": 35
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_8e73cbb0",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "I think you also want to depend on python-neutron-tests?",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_ce64e3e7",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "Can we maybe move all *.ini for in case later we add another config file?",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_2e9b9fca",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "traditionally for neutron packages, we split python-* and service into separate packages.",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_0e5fbb0f",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "non-executable binary?..",
+      "range": {
+        "startLine": 119,
+        "startChar": 25,
+        "endLine": 119,
+        "endChar": 29
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_ee61a7d4",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 119,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "binary being a config file?..",
+      "range": {
+        "startLine": 119,
+        "startChar": 0,
+        "endLine": 119,
+        "endChar": 18
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_4ea0d3f4",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2016-12-22T15:15:32Z",
+      "side": 1,
+      "message": "any point to install the file that describes how to install the agent, probably not the RPM way?",
+      "range": {
+        "startLine": 124,
+        "startChar": 71,
+        "endLine": 124,
+        "endChar": 113
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

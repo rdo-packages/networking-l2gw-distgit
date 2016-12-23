@@ -196,6 +196,24 @@
     },
     {
       "key": {
+        "uuid": "fab399f4_a97b2928",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 273
+      },
+      "writtenOn": "2016-12-23T12:46:57Z",
+      "side": 1,
+      "message": "In my devstack setup with enable_service l2gw-plugin I see this:\n\n/usr/bin/python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config -file /etc/neutron/plugins/ml2/ml2_conf.ini --config-file /etc/neutron/l2gw_plugin.ini\n\nWhat\u0027s the best way to include the config file?",
+      "parentUuid": "fab399f4_0eb6db3d",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab399f4_0e5fbb0f",
         "filename": "python-networking-l2gw.spec",
         "patchSetId": 4
@@ -253,6 +271,30 @@
       "writtenOn": "2016-12-22T15:15:32Z",
       "side": 1,
       "message": "any point to install the file that describes how to install the agent, probably not the RPM way?",
+      "range": {
+        "startLine": 124,
+        "startChar": 71,
+        "endLine": 124,
+        "endChar": 113
+      },
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_4e653344",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 273
+      },
+      "writtenOn": "2016-12-23T12:46:57Z",
+      "side": 1,
+      "message": "I will remove also the contrib/README_install_and_config_l2gateway_plugin.rst file since it\u0027s the very same type of file.",
+      "parentUuid": "fab399f4_4ea0d3f4",
       "range": {
         "startLine": 124,
         "startChar": 71,

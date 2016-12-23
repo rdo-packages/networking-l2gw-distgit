@@ -59,6 +59,24 @@
     },
     {
       "key": {
+        "uuid": "fab399f4_69359145",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-23T14:26:41Z",
+      "side": 1,
+      "message": "Actually, I think it should be openstack-neutron-common. The package does not depend on the Neutron code, but on the config files, /etc/neutron, etc.",
+      "parentUuid": "fab399f4_ae67afe9",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fab399f4_0e489b5a",
         "filename": "python-networking-l2gw.spec",
         "patchSetId": 4
@@ -208,6 +226,24 @@
       "side": 1,
       "message": "In my devstack setup with enable_service l2gw-plugin I see this:\n\n/usr/bin/python /usr/local/bin/neutron-server --config-file /etc/neutron/neutron.conf --config -file /etc/neutron/plugins/ml2/ml2_conf.ini --config-file /etc/neutron/l2gw_plugin.ini\n\nWhat\u0027s the best way to include the config file?",
       "parentUuid": "fab399f4_0eb6db3d",
+      "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fab399f4_893ae534",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2016-12-23T14:26:41Z",
+      "side": 1,
+      "message": "We should do the same thing the lbaas agent does: see https://github.com/rdo-packages/neutron-lbaas-distgit/blob/rpm-master/openstack-neutron-lbaas.spec#L147-L149 for an example.",
+      "parentUuid": "fab399f4_a97b2928",
       "revId": "5bbb805db275ee1a092a42215aa58efd188aaaa7",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false

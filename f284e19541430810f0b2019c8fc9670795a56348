@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_df757333",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T12:59:53Z",
+      "side": 1,
+      "message": "This creates a package named neutron-l2gw-agent. For consistency with other agents, it should be openstack-neutron-l2gw-agent.",
+      "range": {
+        "startLine": 81,
+        "startChar": 0,
+        "endLine": 81,
+        "endChar": 32
+      },
+      "revId": "f284e19541430810f0b2019c8fc9670795a56348",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_7f870710",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T12:59:53Z",
+      "side": 1,
+      "message": "This %post section is not being applied to any subpackage, it should be:\n\n%post %{servicename}-agent\n\nBut actually, the %{servicename}-agent name is not 100% correct, see above",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 111,
+        "endChar": 5
+      },
+      "revId": "f284e19541430810f0b2019c8fc9670795a56348",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_9f7bfb28",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T12:59:53Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 6
+      },
+      "revId": "f284e19541430810f0b2019c8fc9670795a56348",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_bf78bf2c",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 6
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T12:59:53Z",
+      "side": 1,
+      "message": "Same as above",
+      "range": {
+        "startLine": 117,
+        "startChar": 0,
+        "endLine": 117,
+        "endChar": 7
+      },
+      "revId": "f284e19541430810f0b2019c8fc9670795a56348",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

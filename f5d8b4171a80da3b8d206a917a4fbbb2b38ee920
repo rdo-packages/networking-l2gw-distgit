@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_42a0a8f4",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 7
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T16:37:57Z",
+      "side": 1,
+      "message": "Should be %description -n openstack-%{servicename}-agent",
+      "range": {
+        "startLine": 84,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 36
+      },
+      "revId": "f5d8b4171a80da3b8d206a917a4fbbb2b38ee920",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_62a5ac03",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 7
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-09T16:37:57Z",
+      "side": 1,
+      "message": "Should be %files -n openstack-%{servicename}-agent",
+      "range": {
+        "startLine": 140,
+        "startChar": 0,
+        "endLine": 140,
+        "endChar": 30
+      },
+      "revId": "f5d8b4171a80da3b8d206a917a4fbbb2b38ee920",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

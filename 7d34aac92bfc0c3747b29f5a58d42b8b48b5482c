@@ -36,6 +36,24 @@
     },
     {
       "key": {
+        "uuid": "dab895d6_689f4b04",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 113
+      },
+      "writtenOn": "2017-01-11T18:37:09Z",
+      "side": 1,
+      "message": "You\u0027re right, it does. For example: https://github.com/openstack/networking-l2gw/blob/master/networking_l2gw/services/l2gateway/exceptions.py#L16\n\nSo we need to depend on both python-neutron and openstack-neutron-common",
+      "parentUuid": "dab895d6_a801633b",
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dab895d6_08f96f4d",
         "filename": "python-networking-l2gw.spec",
         "patchSetId": 9

@@ -1,0 +1,118 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "dab895d6_88ed7f8e",
+        "filename": "neutron-l2gw-agent.service",
+        "patchSetId": 9
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "this should be integrated with conf.d system that neutron package provides.",
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_a801633b",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "I still think that this package should depend on python-neutron. I bet the l2gw code imports from neutron.*",
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_08f96f4d",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "-\u003e L2 gateway",
+      "range": {
+        "startLine": 82,
+        "startChar": 20,
+        "endLine": 82,
+        "endChar": 24
+      },
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_c8fe9738",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "nit: it\u0027s common to have a newline between %package and %description",
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_e8fb5b45",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "-\u003e L2 gateway",
+      "range": {
+        "startLine": 85,
+        "startChar": 19,
+        "endLine": 85,
+        "endChar": 23
+      },
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "dab895d6_289553e4",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 9
+      },
+      "lineNbr": 129,
+      "author": {
+        "id": 104
+      },
+      "writtenOn": "2017-01-11T18:32:14Z",
+      "side": 1,
+      "message": "I think these %excludes are not needed: lines 129-130.",
+      "revId": "7d34aac92bfc0c3747b29f5a58d42b8b48b5482c",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

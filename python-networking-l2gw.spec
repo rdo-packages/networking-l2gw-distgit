@@ -22,7 +22,7 @@ BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-sphinx
 BuildRequires:  python-subunit
-BuildRequires:  python-tempest-lib
+BuildRequires:  python-tempest
 BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
@@ -73,7 +73,7 @@ Requires:   python-testrepository >= 0.0.18
 Requires:   python-testresources >= 0.2.4
 Requires:   python-testscenarios >= 0.4
 Requires:   python-testtools >= 1.4.0
-Requires:   python-tempest-lib >= 0.14.0
+Requires:   python-tempest >= 14.0.0
 Requires:   mock
 
 %description tests

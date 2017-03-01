@@ -124,7 +124,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %license LICENSE
 %{python2_sitelib}/%{sname}
 %{python2_sitelib}/%{sname}-*.egg-info
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gateway_agent.ini
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gw_plugin.ini
 %{_datadir}/neutron/server/l2gw_plugin.ini
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
@@ -140,6 +139,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 
 %files -n openstack-%{servicename}-agent
 %license LICENSE
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gateway_agent.ini
 %{_unitdir}/%{servicename}-agent.service
 %{_bindir}/neutron-l2gateway-agent
 

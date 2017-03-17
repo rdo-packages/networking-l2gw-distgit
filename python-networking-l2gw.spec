@@ -106,7 +106,7 @@ mv %{buildroot}/usr/etc/neutron/*.ini %{buildroot}%{_sysconfdir}/neutron/
 
 # Make sure neutron-server loads new configuration file
 mkdir -p %{buildroot}/%{_datadir}/neutron/server
-ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/server/l2gw_plugin.ini
+ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/server/l2gw_plugin.conf
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.service
@@ -125,7 +125,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{python2_sitelib}/%{sname}
 %{python2_sitelib}/%{sname}-*.egg-info
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gw_plugin.ini
-%{_datadir}/neutron/server/l2gw_plugin.ini
+%{_datadir}/neutron/server/l2gw_plugin.conf
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
 %exclude %{python2_sitelib}/%{sname}/tests
 

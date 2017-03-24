@@ -4,6 +4,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
+Epoch:          1
 Version:        XXX
 Release:        XXX
 Summary:        API's and implementations to support L2 Gateways in Neutron

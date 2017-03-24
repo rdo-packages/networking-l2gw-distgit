@@ -5,8 +5,8 @@
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        10.0.0
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
@@ -145,5 +145,8 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Fri Mar 24 2017 Alfredo Moralejo <amoralej@redhat.com> 1:10.0.0-1
+- Update to 10.0.0
+
 * Tue Dec 13 2016 Ricardo Noriega <rnoriega@redhat.com> - 2016.1.0-1
 - Initial package.

@@ -4,6 +4,7 @@
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 Name:           python-%{pypi_name}
+Epoch:          1
 Version:        XXX
 Release:        XXX
 Summary:        API's and implementations to support L2 Gateways in Neutron
@@ -61,7 +62,7 @@ Documentation for networking-l2gw
 
 %package tests
 Summary:    networking-l2gw tests
-Requires:   python-%{pypi_name} = %{version}-%{release}
+Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
 Requires:   python-hacking >= 0.9.2
 Requires:   python-coverage
 Requires:   python-neutron-tests
@@ -81,7 +82,7 @@ Networking-l2gw set of tests
 
 %package -n openstack-%{servicename}-agent
 Summary:    Neutron L2 Gateway Agent
-Requires:   python-%{pypi_name} = %{version}-%{release}
+Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n openstack-%{servicename}-agent
 Agent that enables L2 Gateway functionality

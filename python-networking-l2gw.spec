@@ -75,7 +75,7 @@ Requires:   python-testresources >= 0.2.4
 Requires:   python-testscenarios >= 0.4
 Requires:   python-testtools >= 1.4.0
 Requires:   python-tempest >= 14.0.0
-Requires:   mock
+Requires:   python-mock >= 2.0.0
 
 %description tests
 Networking-l2gw set of tests

@@ -16,6 +16,24 @@
       "revId": "a38624406deb8e93e713926bf3aa4c1e0a7d13fb",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_3ddd9215",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 143,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-06-15T17:47:45Z",
+      "side": 1,
+      "message": "May be a new patchset will be better for the same.",
+      "parentUuid": "9aa7fdbe_9db59ecf",
+      "revId": "a38624406deb8e93e713926bf3aa4c1e0a7d13fb",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }

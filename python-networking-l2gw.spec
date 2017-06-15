@@ -15,6 +15,7 @@ Source0:        https://files.pythonhosted.org/packages/source/n/%{pypi_name}/%{
 Source1:        %{servicename}-agent.service
 BuildArch:      noarch
 
+BuildRequires:  openstack-macros
 BuildRequires:  python-coverage
 BuildRequires:  python-hacking
 BuildRequires:  python-oslo-sphinx
@@ -112,6 +113,8 @@ ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/ser
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.service
 
+%py2_entrypoint %{sname} %{pypi_name}
+
 %post -n openstack-%{servicename}-agent
 %systemd_post %{servicename}-agent.service
 
@@ -137,6 +140,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %files -n python-%{pypi_name}-tests
 %license LICENSE
 %{python2_sitelib}/%{sname}/tests
+%{python2_sitelib}/%{sname}_tests.egg-info
 
 %files -n openstack-%{servicename}-agent
 %license LICENSE

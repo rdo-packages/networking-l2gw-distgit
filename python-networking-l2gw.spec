@@ -10,11 +10,12 @@ Release:        XXX
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
-URL:            http://www.openstack.org/
-Source0:        https://files.pythonhosted.org/packages/source/n/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+URL:            https://docs.openstack.org/developer/networking-l2gw/
+Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        %{servicename}-agent.service
 BuildArch:      noarch
 
+BuildRequires:  git
 BuildRequires:  openstack-macros
 BuildRequires:  python-coverage
 BuildRequires:  python-hacking
@@ -64,9 +65,6 @@ Documentation for networking-l2gw
 %package tests
 Summary:    networking-l2gw tests
 Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
-Requires:   python-hacking >= 0.9.2
-Requires:   python-coverage
-Requires:   python-neutron-tests
 Requires:   python-subunit >= 0.0.18
 Requires:   python-sphinx >= 1.2.1
 Requires:   python-oslo-sphinx >= 4.7.0
@@ -75,11 +73,21 @@ Requires:   python-testrepository >= 0.0.18
 Requires:   python-testresources >= 0.2.4
 Requires:   python-testscenarios >= 0.4
 Requires:   python-testtools >= 1.4.0
-Requires:   python-tempest >= 14.0.0
 Requires:   python-mock >= 2.0.0
 
 %description tests
 Networking-l2gw set of tests
+
+%package -n %{name}-tests-tempest
+Summary:    %{sname} Tempest Plugin
+
+Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
+
+Requires:   python-neutron-tests
+Requires:   python-tempest >= 14.0.0
+
+%description -n %{name}-tests-tempest
+It contains tempest plugin for %{name}.
 
 %package -n openstack-%{servicename}-agent
 Summary:    Neutron L2 Gateway Agent
@@ -89,7 +97,9 @@ Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
 Agent that enables L2 Gateway functionality
 
 %prep
-%autosetup -n %{pypi_name}-%{upstream_version}
+%autosetup -n %{pypi_name}-%{upstream_version} -S git
+# remove requirements
+%py_req_cleanup
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
 
@@ -141,6 +151,8 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %license LICENSE
 %{python2_sitelib}/%{sname}/tests
 %{python2_sitelib}/%{sname}_tests.egg-info
+%exclude %{python2_sitelib}/%{sname}/tests/tempest
+%exclude %{python2_sitelib}/%{sname}/tests/api
 
 %files -n openstack-%{servicename}-agent
 %license LICENSE
@@ -148,6 +160,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_unitdir}/%{servicename}-agent.service
 %{_bindir}/neutron-l2gateway-agent
 
+%files -n %{name}-tests-tempest
+%{python2_sitelib}/%{sname}_tests.egg-info
+%{python2_sitelib}/%{sname}/tests/tempest
+%{python2_sitelib}/%{sname}/tests/api
+
 %changelog
-* Tue Dec 13 2016 Ricardo Noriega <rnoriega@redhat.com> - 2016.1.0-1
-- Initial package.

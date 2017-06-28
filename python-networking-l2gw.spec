@@ -143,11 +143,11 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
 %exclude %{python2_sitelib}/%{sname}/tests
 
-%files -n python-%{pypi_name}-doc
+%files -n %{name}-doc
 %license LICENSE
 %doc README.rst
 
-%files -n python-%{pypi_name}-tests
+%files -n %{name}-tests
 %license LICENSE
 %{python2_sitelib}/%{sname}/tests
 %{python2_sitelib}/%{sname}_tests.egg-info

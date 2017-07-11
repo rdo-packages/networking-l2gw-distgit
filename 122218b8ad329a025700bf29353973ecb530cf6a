@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_253ba63b",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 127
+      },
+      "writtenOn": "2017-07-11T14:55:05Z",
+      "side": 1,
+      "message": "Is this actually needed? as a runtime Requirement?",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 39
+      },
+      "revId": "122218b8ad329a025700bf29353973ecb530cf6a",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

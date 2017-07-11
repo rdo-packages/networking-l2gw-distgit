@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_c5d3ba36",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-11T14:02:09Z",
+      "side": 1,
+      "message": "I think this is unneeded also.",
+      "range": {
+        "startLine": 68,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 30
+      },
+      "revId": "e6e98cf105c4ac2ebcee4a0e479a51c9059a6cc1",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

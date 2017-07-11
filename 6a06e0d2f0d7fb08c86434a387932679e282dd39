@@ -1,0 +1,9 @@
+Code-Review+1: Jon Schlueter <jschluet@redhat.com>
+Code-Review+2: Ricardo Noriega <ricardonor@gmail.com>
+Workflow+1: Ricardo Noriega <ricardonor@gmail.com>
+Verified+2: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-by: Jenkins CI <admin@rpmfactory.beta.rdoproject.org>
+Submitted-at: Tue, 11 Jul 2017 13:34:48 +0000
+Reviewed-on: https://review.rdoproject.org/r/7571
+Project: openstack/networking-l2gw-distgit
+Branch: refs/heads/rpm-master

@@ -23,7 +23,6 @@ BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-oslotest
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
-BuildRequires:  python-sphinx
 BuildRequires:  python-subunit
 BuildRequires:  python-tempest
 BuildRequires:  python-testrepository

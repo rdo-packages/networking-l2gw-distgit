@@ -3,6 +3,8 @@
 %global servicename neutron-l2gw
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
+%global with_doc 1
+
 Name:           python-%{pypi_name}
 Epoch:          1
 Version:        XXX
@@ -19,7 +21,6 @@ BuildRequires:  git
 BuildRequires:  openstack-macros
 BuildRequires:  python-coverage
 BuildRequires:  python-hacking
-BuildRequires:  python-oslo-sphinx
 BuildRequires:  python-oslotest
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
@@ -29,7 +30,6 @@ BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
 BuildRequires:  python2-devel
-BuildRequires:  python-sphinx
 BuildRequires:  systemd-units
 
 %description
@@ -56,10 +56,16 @@ manage L2 Gateway components. In the simplest terms L2 Gateways are meant to
 bridge two or more networks together to make them look at a single L2 broadcast
 domain.
 
+%if 0%{?with_doc}
 %package doc
 Summary:    networking-l2gw documentation
+
+BuildRequires:  python-sphinx
+BuildRequires:  python-oslo-sphinx
+
 %description doc
 Documentation for networking-l2gw
+%endif
 
 %package tests
 Summary:    networking-l2gw tests
@@ -104,10 +110,12 @@ rm -rf %{pypi_name}.egg-info
 
 %build
 %py2_build
+%if 0%{?with_doc}
 # generate html docs
 %{__python2} setup.py build_sphinx
 # remove the sphinx-build leftovers
 rm -rf html/.{doctrees,buildinfo}
+%endif
 
 %install
 %py2_install
@@ -142,9 +150,11 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
 %exclude %{python2_sitelib}/%{sname}/tests
 
+%if 0%{?with_doc}
 %files -n %{name}-doc
 %license LICENSE
 %doc README.rst
+%endif
 
 %files -n %{name}-tests
 %license LICENSE

@@ -71,7 +71,6 @@ Documentation for networking-l2gw
 Summary:    networking-l2gw tests
 Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
 Requires:   python-subunit >= 0.0.18
-Requires:   python-oslo-sphinx >= 4.7.0
 Requires:   python-oslotest >= 1.10.0
 Requires:   python-testrepository >= 0.0.18
 Requires:   python-testresources >= 0.2.4

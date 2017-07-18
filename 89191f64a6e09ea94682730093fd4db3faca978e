@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9aa7fdbe_83d8c51e",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2017-07-18T10:33:16Z",
+      "side": 1,
+      "message": "Don\u0027t exclude it from -tests subpackage. A file can be provided by two different packages as far as the content is the same, as in this case. The only problem would be installing -tests-tempest and -tests from different versions in the same server which is not something supported or recommended.",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 54
+      },
+      "revId": "89191f64a6e09ea94682730093fd4db3faca978e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

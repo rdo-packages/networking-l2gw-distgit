@@ -22,6 +22,30 @@
       "revId": "89191f64a6e09ea94682730093fd4db3faca978e",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9aa7fdbe_433c1d30",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 273
+      },
+      "writtenOn": "2017-07-18T11:10:04Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9aa7fdbe_83d8c51e",
+      "range": {
+        "startLine": 161,
+        "startChar": 0,
+        "endLine": 161,
+        "endChar": 54
+      },
+      "revId": "89191f64a6e09ea94682730093fd4db3faca978e",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }

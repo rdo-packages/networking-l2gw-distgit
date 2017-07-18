@@ -169,6 +169,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 
 %files -n %{name}-tests-tempest
 %{python2_sitelib}/%{sname}_tests.egg-info
+%{python2_sitelib}/%{sname}/tests/__init__.py
 %{python2_sitelib}/%{sname}/tests/tempest
 %{python2_sitelib}/%{sname}/tests/api
 

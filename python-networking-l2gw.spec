@@ -19,7 +19,6 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  openstack-macros
-BuildRequires:  python-coverage
 BuildRequires:  python-hacking
 BuildRequires:  python-oslotest
 BuildRequires:  python-pbr

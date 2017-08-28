@@ -42,13 +42,13 @@ domain.
 Summary:        API's and implementations to support L2 Gateways in Neutron
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
-Requires:       python-pbr >= 1.6
-Requires:       python-babel >= 1.3
-Requires:       python-neutron-lib >= 0.0.3
-Requires:       python-neutronclient >= 4.1.1
+Requires:       python-pbr >= 2.0.0
+Requires:       python-babel >= 2.3.4
+Requires:       python-neutron-lib >= 1.9.0
+Requires:       python-neutronclient >= 6.3.0
 Requires:       python-neutron
-Requires:       python-setuptools
 Requires:       openstack-neutron-common
+Requires:       python-ovsdbapp >= 0.4.0
 
 %description -n python2-%{pypi_name}
 This project proposes a Neutron API extension that can be used to express and

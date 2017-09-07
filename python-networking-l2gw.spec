@@ -5,6 +5,12 @@
 
 %global with_doc 1
 
+%global common_desc \
+This project proposes a Neutron API extension that can be used to express and \
+manage L2 Gateway components. In the simplest terms L2 Gateways are meant to \
+bridge two or more networks together to make them look as a single L2 broadcast \
+domain.
+
 Name:           python-%{pypi_name}
 Epoch:          1
 Version:        XXX
@@ -32,10 +38,7 @@ BuildRequires:  python2-devel
 BuildRequires:  systemd-units
 
 %description
-This project proposes a Neutron API extension that can be used to express and
-manage L2 Gateway components. In the simplest terms L2 Gateways are meant to
-bridge two or more networks together to make them look as a single L2 broadcast
-domain.
+%{common_desc}
 
 %package -n     python2-%{pypi_name}
 Summary:        API's and implementations to support L2 Gateways in Neutron
@@ -50,10 +53,7 @@ Requires:       openstack-neutron-common
 Requires:       python-ovsdbapp >= 0.4.0
 
 %description -n python2-%{pypi_name}
-This project proposes a Neutron API extension that can be used to express and
-manage L2 Gateway components. In the simplest terms L2 Gateways are meant to
-bridge two or more networks together to make them look at a single L2 broadcast
-domain.
+%{common_desc}
 
 %if 0%{?with_doc}
 %package doc

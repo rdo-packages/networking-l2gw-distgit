@@ -1,23 +1,19 @@
 %global pypi_name networking-l2gw
 %global sname networking_l2gw
 %global servicename neutron-l2gw
-%{!?upstream_version: %global upstream_version %{commit}}
-%global commit 16cf7d690114c648b77d9849b5220d1eea76b27f
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
-# DO NOT REMOVE ALPHATAG
-%global alphatag .%{shortcommit}git
+%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
 
 %global with_doc 1
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        10.0.1
-Release:        0.1%{?alphatag}%{?dist}
+Version:        11.0.0
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
 URL:            https://docs.openstack.org/developer/networking-l2gw/
-Source0:        https://github.com/openstack/%{pypi_name}/archive/%{commit}.tar.gz#/%{pypi_name}-%{shortcommit}.tar.gz
+Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        %{servicename}-agent.service
 BuildArch:      noarch
 
@@ -177,6 +173,9 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{python2_sitelib}/%{sname}/tests/api
 
 %changelog
+* Tue Sep 19 2017 Alfredo Moralejo <amoralej@redhat.com> 1:11.0.0-1
+- Update to 11.0.0
+
 * Wed Aug 30 2017 Haïkel Guémar <hguemar@fedoraproject.org> - 1:10.0.1-0.1.16cf7d69git
 - Pike update 10.0.1 (16cf7d690114c648b77d9849b5220d1eea76b27f)
 

@@ -109,9 +109,9 @@ rm -rf %{pypi_name}.egg-info
 %py2_build
 %if 0%{?with_doc}
 # generate html docs
-%{__python2} setup.py build_sphinx
+%{__python2} setup.py build_sphinx -b html
 # remove the sphinx-build leftovers
-rm -rf html/.{doctrees,buildinfo}
+rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install

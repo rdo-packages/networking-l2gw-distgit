@@ -30,7 +30,6 @@ BuildRequires:  python-oslotest
 BuildRequires:  python-pbr
 BuildRequires:  python-setuptools
 BuildRequires:  python-subunit
-BuildRequires:  python-tempest
 BuildRequires:  python-testrepository
 BuildRequires:  python-testscenarios
 BuildRequires:  python-testtools
@@ -80,17 +79,6 @@ Requires:   python-mock >= 2.0.0
 %description tests
 Networking-l2gw set of tests
 
-%package -n %{name}-tests-tempest
-Summary:    %{sname} Tempest Plugin
-
-Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
-
-Requires:   python-neutron-tests
-Requires:   python-tempest >= 14.0.0
-
-%description -n %{name}-tests-tempest
-It contains tempest plugin for %{name}.
-
 %package -n openstack-%{servicename}-agent
 Summary:    Neutron L2 Gateway Agent
 Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
@@ -104,6 +92,11 @@ Agent that enables L2 Gateway functionality
 %py_req_cleanup
 # Remove bundled egg-info
 rm -rf %{pypi_name}.egg-info
+
+# Remove tempest plugin entrypoint as a workaround
+sed -i '/tempest/d' setup.cfg
+rm -rf networking_l2gw/tests/tempest
+rm -rf networking_l2gw/tests/api
 
 %build
 %py2_build
@@ -126,8 +119,6 @@ ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/ser
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.service
-
-%py2_entrypoint %{sname} %{pypi_name}
 
 %post -n openstack-%{servicename}-agent
 %systemd_post %{servicename}-agent.service
@@ -157,19 +148,12 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %license LICENSE
 %{python2_sitelib}/%{sname}/tests
 %{python2_sitelib}/%{sname}_tests.egg-info
-%exclude %{python2_sitelib}/%{sname}/tests/tempest
-%exclude %{python2_sitelib}/%{sname}/tests/api
+%{python2_sitelib}/%{sname}/tests/__init__.py
 
 %files -n openstack-%{servicename}-agent
 %license LICENSE
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gateway_agent.ini
 %{_unitdir}/%{servicename}-agent.service
 %{_bindir}/neutron-l2gateway-agent
-
-%files -n %{name}-tests-tempest
-%{python2_sitelib}/%{sname}_tests.egg-info
-%{python2_sitelib}/%{sname}/tests/__init__.py
-%{python2_sitelib}/%{sname}/tests/tempest
-%{python2_sitelib}/%{sname}/tests/api
 
 %changelog

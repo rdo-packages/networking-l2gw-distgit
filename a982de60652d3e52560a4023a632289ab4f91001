@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5a72e520_85f7228c",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 273
+      },
+      "writtenOn": "2017-12-18T18:32:12Z",
+      "side": 1,
+      "message": "Should I remove the following lines once the following patch is merged??\n\nhttps://review.openstack.org/#/c/527935/",
+      "revId": "a982de60652d3e52560a4023a632289ab4f91001",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

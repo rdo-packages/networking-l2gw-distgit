@@ -127,8 +127,6 @@ ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/ser
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.service
 
-%py2_entrypoint %{sname} %{pypi_name}
-
 %post -n openstack-%{servicename}-agent
 %systemd_post %{servicename}-agent.service
 

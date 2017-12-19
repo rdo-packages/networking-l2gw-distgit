@@ -16,6 +16,29 @@
       "revId": "a982de60652d3e52560a4023a632289ab4f91001",
       "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5a72e520_450c4a95",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 111
+      },
+      "writtenOn": "2017-12-19T11:47:17Z",
+      "side": 1,
+      "message": "remove this line as there is no entrypoint macro so not needed.",
+      "range": {
+        "startLine": 168,
+        "startChar": 0,
+        "endLine": 168,
+        "endChar": 42
+      },
+      "revId": "a982de60652d3e52560a4023a632289ab4f91001",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
     }
   ]
 }

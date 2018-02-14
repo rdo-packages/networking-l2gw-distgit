@@ -25,14 +25,14 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  openstack-macros
-BuildRequires:  python-hacking
-BuildRequires:  python-oslotest
-BuildRequires:  python-pbr
-BuildRequires:  python-setuptools
-BuildRequires:  python-subunit
-BuildRequires:  python-testrepository
-BuildRequires:  python-testscenarios
-BuildRequires:  python-testtools
+BuildRequires:  python2-hacking
+BuildRequires:  python2-oslotest
+BuildRequires:  python2-pbr
+BuildRequires:  python2-setuptools
+BuildRequires:  python2-subunit
+BuildRequires:  python2-testrepository
+BuildRequires:  python2-testscenarios
+BuildRequires:  python2-testtools
 BuildRequires:  python2-devel
 BuildRequires:  systemd-units
 
@@ -43,13 +43,13 @@ BuildRequires:  systemd-units
 Summary:        API's and implementations to support L2 Gateways in Neutron
 %{?python_provide:%python_provide python2-%{pypi_name}}
 
-Requires:       python-pbr >= 2.0.0
-Requires:       python-babel >= 2.3.4
-Requires:       python-neutron-lib >= 1.9.0
-Requires:       python-neutronclient >= 6.3.0
+Requires:       python2-pbr >= 2.0.0
+Requires:       python2-babel >= 2.3.4
+Requires:       python-neutron-lib >= 1.13.0
+Requires:       python2-neutronclient >= 6.3.0
 Requires:       python-neutron
 Requires:       openstack-neutron-common
-Requires:       python-ovsdbapp >= 0.4.0
+Requires:       python2-ovsdbapp >= 0.8.0
 
 %description -n python2-%{pypi_name}
 %{common_desc}
@@ -58,8 +58,8 @@ Requires:       python-ovsdbapp >= 0.4.0
 %package doc
 Summary:    networking-l2gw documentation
 
-BuildRequires:  python-sphinx
-BuildRequires:  python-oslo-sphinx
+BuildRequires:  python2-sphinx
+BuildRequires:  python2-oslo-sphinx
 
 %description doc
 Documentation for networking-l2gw
@@ -68,13 +68,13 @@ Documentation for networking-l2gw
 %package tests
 Summary:    networking-l2gw tests
 Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
-Requires:   python-subunit >= 0.0.18
-Requires:   python-oslotest >= 1.10.0
-Requires:   python-testrepository >= 0.0.18
-Requires:   python-testresources >= 0.2.4
-Requires:   python-testscenarios >= 0.4
-Requires:   python-testtools >= 1.4.0
-Requires:   python-mock >= 2.0.0
+Requires:   python2-subunit >= 0.0.18
+Requires:   python2-oslotest >= 1.10.0
+Requires:   python2-testrepository >= 0.0.18
+Requires:   python2-testresources >= 0.2.4
+Requires:   python2-testscenarios >= 0.4
+Requires:   python2-testtools >= 1.4.0
+Requires:   python2-mock >= 2.0.0
 
 %description tests
 Networking-l2gw set of tests

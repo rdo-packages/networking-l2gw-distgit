@@ -1,7 +1,12 @@
 %global pypi_name networking-l2gw
 %global sname networking_l2gw
 %global servicename neutron-l2gw
-%{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+
+%{!?upstream_version: %global upstream_version %{commit}}
+%global commit d8b1d2b8cce86a0a7649cb81f172454f04d4d76b
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+# DO NOT REMOVE ALPHATAG
+%global alphatag .%{shortcommit}git
 
 %global with_doc 1
 
@@ -13,13 +18,13 @@ domain.
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        13.0.0
+Release:        0.1%{?alphatag}%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
 URL:            https://docs.openstack.org/developer/networking-l2gw/
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        https://github.com/openstack/%{pypi_name}/archive/%{commit}.tar.gz#/%{pypi_name}-%{shortcommit}.tar.gz
 Source1:        %{servicename}-agent.service
 BuildArch:      noarch
 
@@ -156,3 +161,5 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Thu Aug 23 2018 Alfredo Moralejo <amoralej@redhat.com> 13.0.0-0.1.d8b1d2b8git
+- Update to pre-release 13.0.0 (d8b1d2b8cce86a0a7649cb81f172454f04d4d76b)

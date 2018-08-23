@@ -45,11 +45,11 @@ Summary:        API's and implementations to support L2 Gateways in Neutron
 
 Requires:       python2-pbr >= 2.0.0
 Requires:       python2-babel >= 2.3.4
-Requires:       python-neutron-lib >= 1.13.0
-Requires:       python2-neutronclient >= 6.3.0
-Requires:       python-neutron
+Requires:       python-neutron-lib >= 1.18.0
+Requires:       python2-neutronclient >= 6.7.0
+Requires:       python-neutron >= 12.0.0
 Requires:       openstack-neutron-common
-Requires:       python2-ovsdbapp >= 0.8.0
+Requires:       python2-ovsdbapp >= 0.10.0
 
 %description -n python2-%{pypi_name}
 %{common_desc}

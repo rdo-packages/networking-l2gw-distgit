@@ -1,3 +1,14 @@
+# Macros for py2/py3 compatibility
+%if 0%{?fedora} || 0%{?rhel} > 7
+%global pyver %{python3_pkgversion}
+%else
+%global pyver 2
+%endif
+%global pyver_bin python%{pyver}
+%global pyver_sitelib %python%{pyver}_sitelib
+%global pyver_install %py%{pyver}_install
+%global pyver_build %py%{pyver}_build
+# End of macros for py2/py3 compatibility
 %global pypi_name networking-l2gw
 %global sname networking_l2gw
 %global servicename neutron-l2gw
@@ -25,63 +36,68 @@ BuildArch:      noarch
 
 BuildRequires:  git
 BuildRequires:  openstack-macros
-BuildRequires:  python2-hacking
-BuildRequires:  python2-oslotest
-BuildRequires:  python2-pbr
-BuildRequires:  python2-setuptools
-BuildRequires:  python2-subunit
-BuildRequires:  python2-testrepository
-BuildRequires:  python2-testscenarios
-BuildRequires:  python2-testtools
-BuildRequires:  python2-devel
+BuildRequires:  python%{pyver}-hacking
+BuildRequires:  python%{pyver}-oslotest
+BuildRequires:  python%{pyver}-pbr
+BuildRequires:  python%{pyver}-setuptools
+BuildRequires:  python%{pyver}-subunit
+BuildRequires:  python%{pyver}-testrepository
+BuildRequires:  python%{pyver}-testscenarios
+BuildRequires:  python%{pyver}-testtools
+BuildRequires:  python%{pyver}-devel
 BuildRequires:  systemd-units
 
 %description
 %{common_desc}
 
-%package -n     python2-%{pypi_name}
+%package -n     python%{pyver}-%{pypi_name}
 Summary:        API's and implementations to support L2 Gateways in Neutron
-%{?python_provide:%python_provide python2-%{pypi_name}}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
-Requires:       python2-pbr >= 2.0.0
-Requires:       python2-babel >= 2.3.4
-Requires:       python-neutron-lib >= 1.18.0
-Requires:       python2-neutronclient >= 6.7.0
-Requires:       python-neutron >= 12.0.0
+Requires:       python%{pyver}-pbr >= 2.0.0
+Requires:       python%{pyver}-babel >= 2.3.4
+Requires:       python%{pyver}-neutron-lib >= 1.18.0
+Requires:       python%{pyver}-neutronclient >= 6.7.0
+Requires:       python%{pyver}-neutron >= 12.0.0
 Requires:       openstack-neutron-common
-Requires:       python2-ovsdbapp >= 0.10.0
+Requires:       python%{pyver}-ovsdbapp >= 0.10.0
 
-%description -n python2-%{pypi_name}
+%description -n python%{pyver}-%{pypi_name}
 %{common_desc}
 
 %if 0%{?with_doc}
 %package doc
 Summary:    networking-l2gw documentation
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
-BuildRequires:  python2-sphinx
-BuildRequires:  python2-oslo-sphinx
+BuildRequires:  python%{pyver}-sphinx
+BuildRequires:  python%{pyver}-oslo-sphinx
 
 %description doc
 Documentation for networking-l2gw
 %endif
 
-%package tests
+%package -n python%{pyver}-%{pypi_name}-tests
 Summary:    networking-l2gw tests
-Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
-Requires:   python2-subunit >= 0.0.18
-Requires:   python2-oslotest >= 1.10.0
-Requires:   python2-testrepository >= 0.0.18
-Requires:   python2-testresources >= 0.2.4
-Requires:   python2-testscenarios >= 0.4
-Requires:   python2-testtools >= 1.4.0
-Requires:   python2-mock >= 2.0.0
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
 
-%description tests
+Requires:   python%{pyver}-%{pypi_name} = %{epoch}:%{version}-%{release}
+Requires:   python%{pyver}-subunit >= 0.0.18
+Requires:   python%{pyver}-oslotest >= 1.10.0
+Requires:   python%{pyver}-testrepository >= 0.0.18
+Requires:   python%{pyver}-testresources >= 0.2.4
+Requires:   python%{pyver}-testscenarios >= 0.4
+Requires:   python%{pyver}-testtools >= 1.4.0
+Requires:   python%{pyver}-mock >= 2.0.0
+
+%description python%{pyver}-%{pypi_name}-tests
 Networking-l2gw set of tests
 
 %package -n openstack-%{servicename}-agent
 Summary:    Neutron L2 Gateway Agent
-Requires:   python-%{pypi_name} = %{epoch}:%{version}-%{release}
+%{?python_provide:%python_provide python%{pyver}-%{pypi_name}}
+
+Requires:   python%{pyver}-%{pypi_name} = %{epoch}:%{version}-%{release}
 
 %description -n openstack-%{servicename}-agent
 Agent that enables L2 Gateway functionality
@@ -99,16 +115,16 @@ rm -rf networking_l2gw/tests/tempest
 rm -rf networking_l2gw/tests/api
 
 %build
-%py2_build
+%{pyver_build}
 %if 0%{?with_doc}
 # generate html docs
-%{__python2} setup.py build_sphinx -b html
-# remove the sphinx-build leftovers
+%{pyver_bin} setup.py build_sphinx -b html
+# remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%py2_install
+%{pyver_install}
 
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-l2gw-agent
 mv %{buildroot}/usr/etc/neutron/*.ini %{buildroot}%{_sysconfdir}/neutron/
@@ -129,25 +145,25 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %postun -n openstack-%{servicename}-agent
 %systemd_postun_with_restart %{servicename}-agent.service
 
-%files -n python2-%{pypi_name}
+%files -n python%{pyver}-%{pypi_name}
 %license LICENSE
-%{python2_sitelib}/%{sname}
-%{python2_sitelib}/%{sname}-*.egg-info
+%{pyver_sitelib}/%{sname}
+%{pyver_sitelib}/%{sname}-*.egg-info
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gw_plugin.ini
 %{_datadir}/neutron/server/l2gw_plugin.conf
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
-%exclude %{python2_sitelib}/%{sname}/tests
+%exclude %{pyver_sitelib}/%{sname}/tests
 
 %if 0%{?with_doc}
-%files -n %{name}-doc
+%files -n python-%{pypi_name}-doc
 %license LICENSE
 %doc README.rst
 %endif
 
 %files -n %{name}-tests
 %license LICENSE
-%{python2_sitelib}/%{sname}/tests
-%{python2_sitelib}/%{sname}/tests/__init__.py
+%{pyver_sitelib}/%{sname}/tests
+%{pyver_sitelib}/%{sname}/tests/__init__.py
 
 %files -n openstack-%{servicename}-agent
 %license LICENSE

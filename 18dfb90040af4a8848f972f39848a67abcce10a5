@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_2ddf9b6a",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 4
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 403
+      },
+      "writtenOn": "2018-12-11T12:18:32Z",
+      "side": 1,
+      "message": "%{name} was also ok.",
+      "range": {
+        "startLine": 156,
+        "startChar": 10,
+        "endLine": 156,
+        "endChar": 29
+      },
+      "revId": "18dfb90040af4a8848f972f39848a67abcce10a5",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

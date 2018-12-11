@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9abe1de1_2d431b44",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-12-11T11:45:43Z",
+      "side": 1,
+      "message": "no need provide in unversioned python package.",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 71,
+        "endChar": 62
+      },
+      "revId": "9175b845c4a0304db50e09a23f9bd06bdb96b5f9",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9abe1de1_0d3e17b8",
+        "filename": "python-networking-l2gw.spec",
+        "patchSetId": 3
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2018-12-11T11:45:43Z",
+      "side": 1,
+      "message": "no need python_provide here.",
+      "range": {
+        "startLine": 98,
+        "startChar": 0,
+        "endLine": 98,
+        "endChar": 62
+      },
+      "revId": "9175b845c4a0304db50e09a23f9bd06bdb96b5f9",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7",
+      "unresolved": false
+    }
+  ]
+}

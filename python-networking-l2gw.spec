@@ -5,9 +5,9 @@
 %global pyver 2
 %endif
 %global pyver_bin python%{pyver}
-%global pyver_sitelib %python%{pyver}_sitelib
-%global pyver_install %py%{pyver}_install
-%global pyver_build %py%{pyver}_build
+%global pyver_sitelib %{expand:%{python%{pyver}_sitelib}}
+%global pyver_install %{expand:%{py%{pyver}_install}}
+%global pyver_build %{expand:%{py%{pyver}_build}}
 # End of macros for py2/py3 compatibility
 %global pypi_name networking-l2gw
 %global sname networking_l2gw
@@ -24,8 +24,8 @@ domain.
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        14.0.0
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
@@ -70,7 +70,7 @@ Requires:       python%{pyver}-ovsdbapp >= 0.10.0
 Summary:    networking-l2gw documentation
 
 BuildRequires:  python%{pyver}-sphinx
-BuildRequires:  python%{pyver}-openstackdocstheme
+BuildRequires:  python%{pyver}-oslo-sphinx
 
 %description doc
 Documentation for networking-l2gw
@@ -116,7 +116,7 @@ rm -rf networking_l2gw/tests/api
 %{pyver_build}
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build-%{pyver} -W -b html doc/source doc/build/html
+%{pyver_bin} setup.py build_sphinx -b html
 # remove the sphinx-build-%{pyver} leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
@@ -170,3 +170,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Wed Apr 03 2019 RDO <dev@lists.rdoproject.org> 1:14.0.0-1
+- Update to 14.0.0
+

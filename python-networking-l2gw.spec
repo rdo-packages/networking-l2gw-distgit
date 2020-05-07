@@ -13,8 +13,8 @@ domain.
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        15.0.0
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
@@ -159,3 +159,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Thu May 07 2020 RDO <dev@lists.rdoproject.org> 1:15.0.0-1
+- Update to 15.0.0
+

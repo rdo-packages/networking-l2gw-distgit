@@ -43,13 +43,12 @@ BuildRequires:  systemd-units
 Summary:        API's and implementations to support L2 Gateways in Neutron
 %{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       python3-pbr >= 2.0.0
-Requires:       python3-babel >= 2.3.4
-Requires:       python3-neutron-lib >= 1.29.0
+Requires:       python3-pbr >= 4.0.0
+Requires:       python3-neutron-lib >= 2.0.0
 Requires:       python3-neutronclient >= 6.7.0
-Requires:       python3-neutron >= 13.0.0
-Requires:       openstack-neutron-common >= 1:13.0.0
-Requires:       python3-ovsdbapp >= 0.10.0
+Requires:       python3-neutron >= 16.0.0
+Requires:       openstack-neutron-common >= 1:16.0.0
+Requires:       python3-ovsdbapp >= 0.17.0
 
 %description -n python3-%{pypi_name}
 %{common_desc}

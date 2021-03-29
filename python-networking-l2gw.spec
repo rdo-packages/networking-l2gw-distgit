@@ -21,11 +21,11 @@ Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
 URL:            https://docs.openstack.org/developer/networking-l2gw/
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        http://tarballs.opendev.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        %{servicename}-agent.service
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        http://tarballs.opendev.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:      noarch

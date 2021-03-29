@@ -15,17 +15,17 @@ domain.
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        17.0.1
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        ASL 2.0
 URL:            https://docs.openstack.org/developer/networking-l2gw/
-Source0:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
+Source0:        http://tarballs.openstack.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        %{servicename}-agent.service
 # Required for tarball sources verification
 %if 0%{?sources_gpg} == 1
-Source101:        http://tarballs.openstack.org/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
+Source101:        http://tarballs.openstack.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz.asc
 Source102:        https://releases.openstack.org/_static/%{sources_gpg_sign}.txt
 %endif
 BuildArch:      noarch
@@ -174,3 +174,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Mon Mar 29 2021 RDO <dev@lists.rdoproject.org> 1:17.0.1-1
+- Update to 17.0.1
+

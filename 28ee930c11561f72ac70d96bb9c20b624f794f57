@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ab863c52_2cdd9582",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 128
+      },
+      "writtenOn": "2022-06-08T14:09:55Z",
+      "side": 1,
+      "message": "From conversation with Takashi:\n\nThe actual issue is that the plugin is not importing config options from oslo-log, probably caused by https://review.opendev.org/c/openstack/neutron/+/837392.\n\nGiven that this project seems mostly abandoned upstream, he will ask the last commiter about the status of the project. In parallel, we\u0027ll disable l2gw from scenario004 if it blocks jobs.",
+      "revId": "28ee930c11561f72ac70d96bb9c20b624f794f57",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}

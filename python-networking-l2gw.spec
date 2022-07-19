@@ -177,3 +177,4 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 * Fri Apr 08 2022 RDO <dev@lists.rdoproject.org> 1:18.0.0-1
 - Update to 18.0.0
 
+

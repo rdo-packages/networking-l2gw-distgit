@@ -4,6 +4,12 @@
 %global sname networking_l2gw
 %global servicename neutron-l2gw
 %{!?upstream_version: %global upstream_version %{version}%{?milestone}}
+# we are excluding some BRs from automatic generator
+%global excluded_brs doc8 bandit pre-commit hacking flake8-import-order
+# Exclude sphinx from BRs if docs are disabled
+%if ! 0%{?with_doc}
+%global excluded_brs %{excluded_brs} sphinx openstackdocstheme
+%endif
 
 %global with_doc 1
 
@@ -19,7 +25,7 @@ Version:        XXX
 Release:        XXX
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
-License:        ASL 2.0
+License:        Apache-2.0
 URL:            https://docs.openstack.org/developer/networking-l2gw/
 Source0:        http://tarballs.opendev.org/x/%{pypi_name}/%{pypi_name}-%{upstream_version}.tar.gz
 Source1:        %{servicename}-agent.service
@@ -37,15 +43,8 @@ BuildRequires:  /usr/bin/gpgv2
 
 BuildRequires:  git-core
 BuildRequires:  openstack-macros
-BuildRequires:  python3-hacking
-BuildRequires:  python3-oslotest
-BuildRequires:  python3-pbr
-BuildRequires:  python3-setuptools
-BuildRequires:  python3-subunit
-BuildRequires:  python3-testrepository
-BuildRequires:  python3-testscenarios
-BuildRequires:  python3-testtools
 BuildRequires:  python3-devel
+BuildRequires:  pyproject-rpm-macros
 BuildRequires:  systemd-units
 
 %description
@@ -53,15 +52,8 @@ BuildRequires:  systemd-units
 
 %package -n     python3-%{pypi_name}
 Summary:        API's and implementations to support L2 Gateways in Neutron
-%{?python_provide:%python_provide python3-%{pypi_name}}
 
-Requires:       python3-pbr >= 4.0.0
-Requires:       python3-neutron-lib >= 3.1.0
-Requires:       python3-neutronclient >= 7.8.0
-Requires:       python3-neutron >= 16.0.0
 Requires:       openstack-neutron-common >= 1:21.0.0
-Requires:       python3-ovsdbapp >= 1.16.0
-
 %description -n python3-%{pypi_name}
 %{common_desc}
 
@@ -69,16 +61,12 @@ Requires:       python3-ovsdbapp >= 1.16.0
 %package doc
 Summary:    networking-l2gw documentation
 
-BuildRequires:  python3-sphinx
-BuildRequires:  python3-openstackdocstheme
-
 %description doc
 Documentation for networking-l2gw
 %endif
 
 %package -n python3-%{pypi_name}-tests
 Summary:    networking-l2gw tests
-%{?python_provide:%python_provide python3-%{pypi_name}}
 
 Requires:   python3-%{pypi_name} = %{epoch}:%{version}-%{release}
 Requires:   python3-subunit >= 0.0.18
@@ -106,27 +94,45 @@ Agent that enables L2 Gateway functionality
 %{gpgverify}  --keyring=%{SOURCE102} --signature=%{SOURCE101} --data=%{SOURCE0}
 %endif
 %autosetup -n %{pypi_name}-%{upstream_version} -S git
-# remove requirements
-%py_req_cleanup
-# Remove bundled egg-info
-rm -rf %{pypi_name}.egg-info
 
 # Remove tempest plugin entrypoint as a workaround
 sed -i '/tempest/d' setup.cfg
 rm -rf networking_l2gw/tests/tempest
 rm -rf networking_l2gw/tests/api
 
+sed -i /^[[:space:]]*-c{env:.*_CONSTRAINTS_FILE.*/d tox.ini
+sed -i "s/^deps = -c{env:.*_CONSTRAINTS_FILE.*/deps =/" tox.ini
+sed -i /^minversion.*/d tox.ini
+sed -i /^requires.*virtualenv.*/d tox.ini
+
+# Exclude some bad-known BRs
+for pkg in %{excluded_brs}; do
+  for reqfile in doc/requirements.txt test-requirements.txt; do
+    if [ -f $reqfile ]; then
+      sed -i /^${pkg}.*/d $reqfile
+    fi
+  done
+done
+
+# Automatic BR generation
+%generate_buildrequires
+%if 0%{?with_doc}
+  %pyproject_buildrequires -t -e %{default_toxenv},docs
+%else
+  %pyproject_buildrequires -t -e %{default_toxenv}
+%endif
+
 %build
-%{py3_build}
+%pyproject_wheel
 %if 0%{?with_doc}
 # generate html docs
-sphinx-build-3 -W -b html doc/source doc/build/html
+%tox -e docs
 # remove the sphinx-build-3 leftovers
 rm -rf doc/build/html/.{doctrees,buildinfo}
 %endif
 
 %install
-%{py3_install}
+%pyproject_install
 
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-l2gw-agent
 mv %{buildroot}/usr/etc/neutron/*.ini %{buildroot}%{_sysconfdir}/neutron/
@@ -150,7 +156,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %files -n python3-%{pypi_name}
 %license LICENSE
 %{python3_sitelib}/%{sname}
-%{python3_sitelib}/%{sname}-*.egg-info
+%{python3_sitelib}/%{sname}-*.dist-info
 %config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gw_plugin.ini
 %{_datadir}/neutron/server/l2gw_plugin.conf
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent

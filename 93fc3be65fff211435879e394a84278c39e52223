@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "969d8ebb_e1952773",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 635
+      },
+      "writtenOn": "2023-07-06T12:14:10Z",
+      "side": 1,
+      "message": "There is a bunch of new build-time dep installed, I need to check if it\u0027s relevant",
+      "revId": "93fc3be65fff211435879e394a84278c39e52223",
+      "serverId": "270e2033-b340-4cff-9539-693957ebf0e7"
+    }
+  ]
+}

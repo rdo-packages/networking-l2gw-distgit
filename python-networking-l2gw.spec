@@ -1,5 +1,5 @@
 %{!?sources_gpg: %{!?dlrn:%global sources_gpg 1} }
-%global sources_gpg_sign 0x2426b928085a020d8a90d0d879ab7008d0896c8a
+%global sources_gpg_sign 0x815afec729392386480e076dcc0dfe2d21c023c9
 %global pypi_name networking-l2gw
 %global sname networking_l2gw
 %global servicename neutron-l2gw
@@ -23,8 +23,8 @@ domain.
 
 Name:           python-%{pypi_name}
 Epoch:          1
-Version:        XXX
-Release:        XXX
+Version:        20.0.0
+Release:        1%{?dist}
 Summary:        API's and implementations to support L2 Gateways in Neutron
 
 License:        Apache-2.0
@@ -181,3 +181,6 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+* Tue Apr 16 2024 RDO <dev@lists.rdoproject.org> 1:20.0.0-1
+- Update to 20.0.0
+

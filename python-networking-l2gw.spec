@@ -77,7 +77,6 @@ Requires:   python3-testrepository >= 0.0.18
 Requires:   python3-testresources >= 0.2.4
 Requires:   python3-testscenarios >= 0.4
 Requires:   python3-testtools >= 1.4.0
-Requires:   python3-mock >= 2.0.0
 
 %description -n python3-%{pypi_name}-tests
 Networking-l2gw set of tests

@@ -137,10 +137,11 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-l2gw-agent
 mv %{buildroot}/usr/etc/neutron/*.ini %{buildroot}%{_sysconfdir}/neutron/
+mv %{buildroot}/usr/etc/neutron/*.conf %{buildroot}%{_sysconfdir}/neutron/
 
 # Make sure neutron-server loads new configuration file
 mkdir -p %{buildroot}/%{_datadir}/neutron/server
-ln -s %{_sysconfdir}/neutron/l2gw_plugin.ini %{buildroot}%{_datadir}/neutron/server/l2gw_plugin.conf
+ln -s %{_sysconfdir}/neutron/networking_l2gw.conf %{buildroot}%{_datadir}/neutron/server/l2gw_plugin.conf
 
 # Install systemd units
 install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.service
@@ -158,7 +159,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %license LICENSE
 %{python3_sitelib}/%{sname}
 %{python3_sitelib}/%{sname}-*.dist-info
-%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/l2gw_plugin.ini
+%config(noreplace) %attr(0640, root, neutron) %{_sysconfdir}/neutron/networking_l2gw.conf
 %{_datadir}/neutron/server/l2gw_plugin.conf
 %dir %{_sysconfdir}/neutron/conf.d/%{servicename}-agent
 %exclude %{python3_sitelib}/%{sname}/tests

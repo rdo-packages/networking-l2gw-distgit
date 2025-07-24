@@ -174,3 +174,4 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %{_bindir}/neutron-l2gateway-agent
 
 %changelog
+# REMOVEME: error caused by commit https://opendev.org/x/networking-l2gw/commit/cd8808d1ff5a145a759ae5163a47bb75ad7b895d

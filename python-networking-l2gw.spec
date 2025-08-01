@@ -147,6 +147,7 @@ install -p -D -m 644 %{SOURCE1} %{buildroot}%{_unitdir}/%{servicename}-agent.ser
 %postun -n openstack-%{servicename}-agent
 %systemd_postun_with_restart %{servicename}-agent.service
 
+
 %files -n python3-%{pypi_name}
 %license LICENSE
 %{python3_sitelib}/%{sname}

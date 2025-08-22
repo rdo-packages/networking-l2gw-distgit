@@ -135,9 +135,15 @@ rm -rf doc/build/html/.{doctrees,buildinfo}
 %install
 %pyproject_install
 
+# Generate configuration files
+export PYTHONPATH="%{buildroot}/%{python3_sitelib}"
+for file in `ls etc/oslo-config-generator/*`; do
+    oslo-config-generator --config-file=$file
+done
+
 mkdir -p %{buildroot}%{_sysconfdir}/neutron/conf.d/neutron-l2gw-agent
-mv %{buildroot}/usr/etc/neutron/*.ini %{buildroot}%{_sysconfdir}/neutron/
-mv %{buildroot}/usr/etc/neutron/*.conf %{buildroot}%{_sysconfdir}/neutron/
+mv etc/l2gateway_agent.ini.sample %{buildroot}%{_sysconfdir}/neutron/l2gateway_agent.ini
+mv etc/networking_l2gw.conf.sample %{buildroot}%{_sysconfdir}/neutron/networking_l2gw.conf
 
 # Make sure neutron-server loads new configuration file
 mkdir -p %{buildroot}/%{_datadir}/neutron/server
